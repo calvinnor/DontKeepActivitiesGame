@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Dont Keep Activities Game</string>
+    <string name="hint_player_1_name">Player 1 Name</string>
+    <string name="hint_player_2_name">Player 2 Name</string>
+    <string name="btn_play">Play!</string>
+
+</resources>
