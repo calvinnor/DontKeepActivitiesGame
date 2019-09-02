@@ -19,6 +19,7 @@ data class GameState(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeParcelable(playerOneDetails, flags)
+        parcel.writeParcelable(playerTwoDetails, flags)
         parcel.writeLong(playerOneScore)
         parcel.writeLong(playerTwoScore)
     }
