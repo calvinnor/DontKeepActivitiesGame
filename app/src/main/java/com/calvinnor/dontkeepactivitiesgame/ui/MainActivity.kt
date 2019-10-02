@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), PlayerDetailsFragment.InteractionsList
         playerOneDetails: PlayerDetails,
         playerTwoDetails: PlayerDetails
     ) {
-        inflateGameFragment(playerOneDetails, playerTwoDetails)
+        inflateGameFragment(Pair(playerOneDetails, playerTwoDetails))
     }
 
     private fun inflatePlayerDetailsFragment() {
@@ -29,14 +29,11 @@ class MainActivity : AppCompatActivity(), PlayerDetailsFragment.InteractionsList
             .commit()
     }
 
-    private fun inflateGameFragment(
-        playerOneDetails: PlayerDetails,
-        playerTwoDetails: PlayerDetails
-    ) {
+    private fun inflateGameFragment(playersDetails: Pair<PlayerDetails, PlayerDetails>) {
         supportFragmentManager.beginTransaction()
             .replace(
                 flFragmentContainer.id,
-                GameFragment.newInstance(playerOneDetails, playerTwoDetails)
+                GameFragment.newInstance(playersDetails)
             )
             .commit()
     }

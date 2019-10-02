@@ -59,10 +59,10 @@ class GameFragment : Fragment() {
 
         private const val ARGS_GAME_STATE = "args_game_state"
 
-        fun newInstance(playerOneDetails: PlayerDetails, playerTwoDetails: PlayerDetails) =
+        fun newInstance(playersDetails: Pair<PlayerDetails, PlayerDetails>) =
             GameFragment().apply {
                 arguments = Bundle().apply {
-                    putParcelable(ARGS_GAME_STATE, buildNewGame(playerOneDetails, playerTwoDetails))
+                    putParcelable(ARGS_GAME_STATE, buildNewGame(playersDetails.first, playersDetails.second))
                 }
             }
 
