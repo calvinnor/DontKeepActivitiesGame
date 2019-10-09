@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity(), PlayerDetailsFragment.InteractionsList
         playerOneDetails: PlayerDetails,
         playerTwoDetails: PlayerDetails
     ) {
+        if (flFragmentContainer.left == 0) {
+            flFragmentContainer.left = 500
+            return
+        }
         inflateGameFragment(Pair(playerOneDetails, playerTwoDetails))
     }
 
